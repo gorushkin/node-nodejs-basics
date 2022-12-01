@@ -2,8 +2,8 @@ import { promises } from 'fs';
 import { checkIfTargetExist, getAbsolutPath, getPath } from './utils.js';
 
 const copy = async () => {
-  const source = 'files';
-  const destination = 'files_copy';
+  const source = 'src/fs/files';
+  const destination = 'src/fs/files_copy';
   const soursePath = getAbsolutPath(source);
   const destinationPath = getAbsolutPath(destination);
 

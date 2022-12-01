@@ -3,7 +3,7 @@ import { checkIfTargetExist, checkIfTargetNotExist, getAbsolutPath } from './uti
 
 const rename = async () => {
   const currentName = 'wrongFilename.txt';
-  const folder = 'files';
+  const folder = 'src/fs/files';
   const newName = 'properFilename.md';
 
   const currentPath = getAbsolutPath(folder, currentName);

@@ -2,7 +2,7 @@ import { promises } from 'fs';
 import { checkIfTargetExist, getAbsolutPath } from './utils.js';
 
 const create = async () => {
-  const outputFolder = 'files';
+  const outputFolder = 'src/fs/files';
   const filename = 'fresh.txt';
   const content = 'I am fresh and young';
 

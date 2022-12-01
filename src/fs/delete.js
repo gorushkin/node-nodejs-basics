@@ -3,7 +3,7 @@ import { checkIfTargetNotExist, getAbsolutPath } from './utils.js';
 
 const remove = async () => {
   const filename = 'fileToRemove.txt';
-  const folder = 'files';
+  const folder = 'src/fs/files';
   const pathToFile = getAbsolutPath(folder, filename);
 
   await checkIfTargetNotExist(pathToFile);

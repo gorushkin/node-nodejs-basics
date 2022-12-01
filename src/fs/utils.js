@@ -1,5 +1,5 @@
 import path from 'path';
-import fs, { promises } from 'fs';
+import { promises } from 'fs';
 
 export const getPath = (...args) => {
   const getReccurPath = (list) => {
