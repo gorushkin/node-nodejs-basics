@@ -1,13 +1,14 @@
 import { promises } from 'fs';
-import { checkIfTargetExist, getAbsolutPath, getPath } from './utils.js';
+import { checkIfTargetExist, getPath, getDirname } from './utils.js';
 
 const copy = async () => {
-  const source = 'src/fs/files';
-  const destination = 'src/fs/files_copy';
-  const soursePath = getAbsolutPath(source);
-  const destinationPath = getAbsolutPath(destination);
+  const dirname = getDirname(import.meta.url);
+  const source = 'files';
+  const destination = 'files_copy';
+  const soursePath = getPath(dirname, source);
+  const destinationPath = getPath(dirname, destination);
 
-  await checkIfTargetExist(destination);
+  await checkIfTargetExist(destinationPath);
 
   try {
     await promises.mkdir(destinationPath);

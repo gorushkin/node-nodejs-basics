@@ -1,10 +1,11 @@
 import { promises } from 'fs';
-import { checkIfTargetNotExist, getAbsolutPath } from './utils.js';
+import { checkIfTargetNotExist, getPath, getDirname } from './utils.js';
 
 const remove = async () => {
+  const dirname = getDirname(import.meta.url);
   const filename = 'fileToRemove.txt';
-  const folder = 'src/fs/files';
-  const pathToFile = getAbsolutPath(folder, filename);
+  const folder = 'files';
+  const pathToFile = getPath(dirname, folder, filename);
 
   await checkIfTargetNotExist(pathToFile);
 

@@ -1,9 +1,10 @@
 import { promises } from 'fs';
-import { checkIfTargetNotExist, getAbsolutPath } from './utils.js';
+import { checkIfTargetNotExist, getPath, getDirname } from './utils.js';
 
 const list = async () => {
-  const folder = 'src/fs/files';
-  const pathToFolder = getAbsolutPath(folder);
+  const dirname = getDirname(import.meta.url);
+  const folder = 'files';
+  const pathToFolder = getPath(dirname, folder);
 
   await checkIfTargetNotExist(pathToFolder);
 

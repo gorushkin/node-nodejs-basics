@@ -1,5 +1,8 @@
-import path from 'path';
+import path, { dirname } from 'path';
 import { promises } from 'fs';
+import { fileURLToPath } from 'url';
+
+export const getDirname = (object) => dirname(fileURLToPath(object));
 
 export const getPath = (...args) => {
   const getReccurPath = (list) => {

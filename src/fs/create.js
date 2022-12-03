@@ -1,12 +1,13 @@
 import { promises } from 'fs';
-import { checkIfTargetExist, getAbsolutPath } from './utils.js';
+import { checkIfTargetExist, getPath, getDirname } from './utils.js';
 
 const create = async () => {
-  const outputFolder = 'src/fs/files';
+  const dirname = getDirname(import.meta.url);
+  const outputFolder = 'files';
   const filename = 'fresh.txt';
   const content = 'I am fresh and young';
 
-  const fullPath = getAbsolutPath(outputFolder, filename);
+  const fullPath = getPath(dirname, outputFolder, filename);
 
   await checkIfTargetExist(fullPath);
 
